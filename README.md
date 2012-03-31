@@ -51,7 +51,7 @@ There is also an opportunity for a bonus of 5 points in **Part 2** below.
 You will notice that when you run your implementation from **Part 1** your server may get stuck in the `pause()` function. All activity will stop and the terminal will display `SERVER: Max child reached. Waiting...`. It turns out that this is related to a concurrency bug associated with subtleties in the way processes are interleaved and how signals are delivered. To solve this problem you need to manipulate the *blocked bit vector* in the process context to block the `SIGCHLD` signal for a short period of time. To solve this you should read **Section 8.5.7 Synchronizing Flows to Avoid Nasty Concurrency Bugs** and look at the example code in **Figure 8.37** on page 757 in the book. It shows you how to solve this problem for a very similiar program. Use this as an example to fix the basic implementation from part 1. If you do it right your server program will execute to completion each and every time it is invoked.  
 
 ## Sample Output
-[Sat Mar 31:server-sim] ./server 
+	[Sat Mar 31:server-sim] ./server 
 	SERVER: Waiting for request.
 	SERVER: Received request 1.
 	SERVER: Waiting for request.
